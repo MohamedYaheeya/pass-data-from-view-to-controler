@@ -1,0 +1,43 @@
+﻿@model pass_data_controler_to_view.Models.Data
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Index</title>
+</head>
+<body>
+    <div>
+        <h3>Perametr type</h3>
+        @using (Html.BeginForm("UsingPerameter", "Student"))
+        {
+            <input type="text" name="fname" /><br />
+            <input type="text" name="lname" /><br />
+            <input type="submit" value="Save" /><br />
+        }
+        <h3>Request type</h3>
+        <hr />
+        @using (Html.BeginForm("UsingRequest", "Student"))
+        {
+            <input type="text" name="fname" /><br />
+            <input type="text" name="lname" /><br />
+            <input type="submit" value="Save" /><br />
+        }
+    <h3>using model</h3>
+        <hr />
+        @using (Html.BeginForm("Usingmodel", "Student",FormMethod.Post))
+        {
+           @Html.TextBoxFor(x=>x.fname)<br />
+            @Html.TextBoxFor(x=>x.lname)<br />
+            <input type="submit" value="Save" /><br />
+        }
+
+
+
+    </div>
+</body>
+</html>
